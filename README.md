@@ -2,7 +2,6 @@
   <br />
   <br />
   
-  <img src="https://cdn.discordapp.com/attachments/755597803102928966/931042317878587412/logo.svg" />
 
   <br />
   <br />
