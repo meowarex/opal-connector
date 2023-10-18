@@ -1,0 +1,49 @@
+xornet(1) -- Data collector that gets your system's state and sends it to the Xornet backend
+============================================================================================
+
+## SYPNOSIS
+`xornet-reporter` \[OPTIONS\]
+
+## DESCRIPTION
+This is the data collector that gets your system's state and sends it
+to the backend, it can also be used as a pure system stat inspector
+without needing to connect it to Xornet.
+
+More info at https://github.com/xornet-cloud/Reporter
+
+## OPTIONS
+  * `-h`, `--help`:
+    Show this help
+  * `v`, `--version`:
+    Show version and exit
+  * `-su` KEY, `--signup` KEY:
+    Sign up the machine with an authentication key to Xornet for online features
+  * `-i` SECOND, `--interval` SECOND:
+    (default: 1) Data collection interval in seconds
+  * `-p` CHAR, `--prefix` CHAR:
+    (default: "●") Prefix that is shown at the beginning of each field
+  * `-nc`, `--no-clear`:
+    (default: false) Disables the terminal clearing on each interval
+  * `-c`, `--colorless`:
+    (default: false) Disables color
+  * `-off`, `--offline`:
+    (default: false) Disables sending data to Xornet's backend
+
+## Examples
+
+Run xornet-reporter normally:
+
+    $ xornet-reporter
+
+Run xornet with 0.25 seconds between data collection interval:
+
+    $ xornet-reporter -i 0.25
+
+Run xornet with ">" prefix:
+
+    $ xornet-reporter -p ">"
+
+Run xornet with 0.5 seconds between data collection interval and
+"*" prefix on each field:
+
+    $ xornet-reporter -p * -i 0.5

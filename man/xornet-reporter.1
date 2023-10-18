@@ -1,0 +1,103 @@
+.\" generated with Ronn/v0.7.3
+.\" http://github.com/rtomayko/ronn/tree/0.7.3
+.
+.TH "XORNET" "1" "January 2022" "" ""
+.
+.SH "NAME"
+\fBxornet\fR \- Data collector that gets your system\'s state and sends it to the Xornet backend
+.
+.SH "SYPNOSIS"
+\fBxornet\-reporter\fR [OPTIONS]
+.
+.SH "DESCRIPTION"
+This is the data collector that gets your system\'s state and sends it to the backend, it can also be used as a pure system stat inspector without needing to connect it to Xornet\.
+.
+.P
+More info at https://github\.com/xornet\-cloud/Reporter
+.
+.SH "OPTIONS"
+.
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+Show this help
+.
+.TP
+\fBv\fR, \fB\-\-version\fR
+Show version and exit
+.
+.TP
+\fB\-su\fR KEY, \fB\-\-signup\fR KEY
+Sign up the machine with an authentication key to Xornet for online features
+.
+.TP
+\fB\-i\fR SECOND, \fB\-\-interval\fR SECOND
+(default: 1) Data collection interval in seconds
+.
+.TP
+\fB\-p\fR CHAR, \fB\-\-prefix\fR CHAR
+(default: "●") Prefix that is shown at the beginning of each field
+.
+.TP
+\fB\-nc\fR, \fB\-\-no\-clear\fR
+(default: false) Disables the terminal clearing on each interval
+.
+.TP
+\fB\-c\fR, \fB\-\-colorless\fR
+(default: false) Disables color
+.
+.TP
+\fB\-off\fR, \fB\-\-offline\fR
+(default: false) Disables sending data to Xornet\'s backend
+.
+.SH "Examples"
+Run xornet\-reporter normally:
+.
+.IP "" 4
+.
+.nf
+
+$ xornet\-reporter
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Run xornet with 0\.25 seconds between data collection interval:
+.
+.IP "" 4
+.
+.nf
+
+$ xornet\-reporter \-i 0\.25
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Run xornet with ">" prefix:
+.
+.IP "" 4
+.
+.nf
+
+$ xornet\-reporter \-p ">"
+.
+.fi
+.
+.IP "" 0
+.
+.P
+Run xornet with 0\.5 seconds between data collection interval and "*" prefix on each field:
+.
+.IP "" 4
+.
+.nf
+
+$ xornet\-reporter \-p * \-i 0\.5
+.
+.fi
+.
+.IP "" 0
+
